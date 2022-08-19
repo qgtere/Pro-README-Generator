@@ -50,6 +50,17 @@ function renderLicenseLink(license) {
   return link;  
 }
 
+// function that returns the table of content section of README
+function renderTableofContent(license) {
+  let tableContent = '';
+  tableContent = `## Table of Content\n* [Installation](#installation)\n* [Usage](#usage)\n`;
+  if (license !== 'None'){
+    tableContent += `* [License](#license)\n`;
+  }  
+  tableContent += `* [Contributing](#contributing)\n* [Test](#test)\n* [Questions](#questions)\n`;
+  return tableContent;
+}
+
 // function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
@@ -59,42 +70,38 @@ function renderLicenseSection(license) {
   } else {return ``;}
 }
 
+// function that returns the contribution section of README
+function renderContributionSection(contribution) {
+  if (contribution === 'Yes') {
+    return `## Contributing \n The open source community is a great place to inspire and learn thanks to contributions, feel free to make yours!
+    If you have a suggestion that would make this better, please fork the repo and create a pull request.\n`;
+  } else {
+    return `## Contributing \n Thank you for your interest, but this project is currently not available for contributions.\n`;
+  }
+}
 
 // function to generate markdown for README
 function generateMarkdown(data) {
   let content = '';
-  content = `# ${data.title}\n`;
   
-  content += renderLicenseBadge(data.license);
-  
+  content = `# ${data.title}\n`;  
+  content += renderLicenseBadge(data.license);  
   content += `## Description\n ${data.description}\n`;
-  
-  content += `## Table of Content\n* [Installation](#installation)\n* [Usage](#usage)\n`;
-  if (data.license !== 'None'){
-    content += `* [License](#license)\n`;
-  }  
-  content += `* [Contributing](#contributing)\n* [Test](#test)\n* [Questions](#questions)\n`;
-
+  content += renderTableofContent(data.license);
   content += `## Installation
   To install the necessary dependencies, run the following command:\n` +
     "```sh" + `\n${data.installCmd}\n` + "```\n";
-
-  content += `## Usage\n ${data.usageDesc}\n`;
-    
+  content += `## Usage\n ${data.usageDesc}\n`;    
   content += renderLicenseSection(data.license);
-
-  content += `## Contributing \n ${data.contributionDesc}\n`;
-
+  content += renderContributionSection(data.contributionDesc);
   content += `## Test
   There are some test you can run. To do so, please run the following command:\n` +
     "```sh" + `\n${data.testCommand}\n` + "```\n";
-
   content += `## Questions
   You can see more of my work on [${data.gitHubUser}](https://github.com/${data.gitHubUser}).\n
   If you have any additional questions please don't hesitate to reach me on ${data.email}.  
   `;
 
-  console.log(content);
   return content;
 }
 
