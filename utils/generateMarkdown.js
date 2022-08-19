@@ -90,13 +90,13 @@ function generateMarkdown(data) {
   content += renderTableofContent(data.license);
   content += `## Installation
   To install the necessary dependencies, run the following command:\n` +
-    "```sh" + `\n${data.installCmd}\n` + "```\n";
+    "```bash" + `\n${data.installCmd}\n` + "```\n";
   content += `## Usage\n ${data.usageDesc}\n`;    
   content += renderLicenseSection(data.license);
   content += renderContributionSection(data.contributionDesc);
   content += `## Test
   There are some test you can run. To do so, please run the following command:\n` +
-    "```sh" + `\n${data.testCommand}\n` + "```\n";
+    "```bash" + `\n${data.testCommand}\n` + "```\n";
   content += `## Questions
   You can see more of my work on [${data.gitHubUser}](https://github.com/${data.gitHubUser}).\n
   If you have any additional questions please don't hesitate to reach me on ${data.email}.  
