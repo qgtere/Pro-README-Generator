@@ -67,7 +67,7 @@ function init() {
     ])
     .then((data) => {
       const readmeContent = generateMarkdown(data);
-      writeToFile('README.md', readmeContent);
+      writeToFile('proREADME.md', readmeContent);
     });    
 }
 
