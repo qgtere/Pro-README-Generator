@@ -15,9 +15,9 @@
 
  * A new file named "proREADME.md" will be created.
 
- ## Video Mock up
+ ## Video.
 
-  ![Link to the video]()
+  [Link to the video](https://drive.google.com/file/d/17KPd-B0SgmW0Agitr6r8aVPeChDyQUDK/view)
 
   ## The work.
 
@@ -29,12 +29,12 @@
 
   * Practice of arrow functions
 
-  ## Techs
+  ## Techs.
 
   * Javascript
 
   * Node.js
-  
-  ## Link to the application
 
-  * [Visit the app here!](https://qgtere.github.io/)
+  ## Mock Up
+
+  ![](assets/images/proREADME-Generator.png)  
